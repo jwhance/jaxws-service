@@ -1,0 +1,28 @@
+GET http://localhost:8080/jaxws-service-1.0-SNAPSHOT/HelloWorldService?wsdl
+
+###
+
+POST http://localhost:8080/jaxws-service-1.0-SNAPSHOT/HelloWorldService
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:sayHello>
+         <!--Optional:-->
+         <arg0>Joe</arg0>
+      </exam:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+POST http://localhost:8080/jaxws-service-1.0-SNAPSHOT/HelloWorldService
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:getDateTime />
+   </soapenv:Body>
+</soapenv:Envelope>
